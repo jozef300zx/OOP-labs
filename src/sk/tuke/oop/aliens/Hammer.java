@@ -5,21 +5,24 @@
  */
 package sk.tuke.oop.aliens;
 
-import sk.tuke.oop.aliens.actor.AbstractActor;
 import sk.tuke.oop.framework.Animation;
 
 /**
  *
  * @author jmorvay
  */
-public class Hammer extends AbstractActor{
+public class Hammer extends AbstractTool{
     
  private Animation normalAnimation;
 
-    Hammer()
-    {
-    normalAnimation = new Animation("resources/images/hammer.png",16,16,10);
-    setAnimation(normalAnimation);   
+    protected Hammer(int numberOfUses) {
+        super(numberOfUses);  
     }
     
+    Hammer() {
+        super(1);
+        normalAnimation = new Animation("resources/images/hammer.png",16,16,10);
+        setAnimation(normalAnimation); 
+    }
+
 }
